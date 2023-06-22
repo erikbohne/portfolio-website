@@ -1,26 +1,8 @@
 import { Box, IconButton, Typography } from '@mui/material';
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 
 const NavBar = () => {
-    const navigate = useNavigate();
-
-    const [anchorEl, setAnchorEl] = useState(null);
-
-    const handleClick = (event) => {
-        setAnchorEl(event.currentTarget);
-    };
-
-    const handleClose = () => {
-        setAnchorEl(null);
-    };
-
-    const goToSettings = () => {
-        handleClose();
-        navigate('/personalinfo');
-    };
 
     return (
         <Box 
@@ -28,23 +10,18 @@ const NavBar = () => {
             justifyContent='space-between' 
             p={2}
         >
-            {/* SEARCH BAR */}
-            <Box 
-                display='flex' 
-                sx={{
-                  }}
-            >
+            <Box display='flex'>
                 <Typography>
-                    Hei på deg!
+                    Erik Nymo Bohne
                 </Typography>
             </Box>
 
             {/* ICONS */}
             <Box display='flex'>
-                <IconButton onClick={goToSettings}>
+                <IconButton href='https://github.com/erikbohne'>
                     <GitHubIcon />
                 </IconButton>
-                <IconButton onClick={handleClick}>
+                <IconButton href='https://www.linkedin.com/in/erik-nymo-bohne-25868321a/'>
                     <LinkedInIcon />
                 </IconButton>
             </Box>
