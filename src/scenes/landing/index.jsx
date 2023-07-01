@@ -38,7 +38,7 @@ export const LandingPage = () => {
     }, [text, delta]);
 
     return (
-        <Box id="home" sx={{ maxWidth: '100%', overflowX: 'hidden', p: 2, position: 'relative' }}>
+        <Box id="home" mt={10} sx={{ maxWidth: '100vw', overflowX: 'hidden', p: 2, position: 'relative' }}>
             <Box 
                 component="video"
                 autoPlay
@@ -50,7 +50,7 @@ export const LandingPage = () => {
                     position: 'fixed',
                     top: 0,
                     left: 0,
-                    width: '100%',
+                    width: '100vw',
                     height: '100%',
                     objectFit: 'cover',
                     zIndex: -1
@@ -63,7 +63,7 @@ export const LandingPage = () => {
              justifyContent='left'
              style={{ height: '90vh', marginTop: '30px', marginLeft: '10%' }}
             >
-                <Grid item xs={12} sm={10} md={8} lg={6}>
+                <Grid item xs={12} sm={10} md={8} lg={6} bgcolor='rgba(256,256,256,0.5)' p={4} borderRadius='10px'>
                     <Typography variant="subtitle1" gutterBottom>Welcome to the portfolio of Erik Nymo Bohne</Typography>
                     <Typography variant="h3" fontWeight='bold' component="div">I'm Erik</Typography>
                     <Typography variant="h3" fontWeight='bold' component="div"><span className="wrap">{text}</span></Typography>

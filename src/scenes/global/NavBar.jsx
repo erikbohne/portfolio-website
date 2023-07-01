@@ -9,15 +9,23 @@ const NavBar = () => {
             display='flex' 
             justifyContent='space-between' 
             p={2}
+            sx={{
+                position: 'fixed',
+                top: 0,
+                left: 0,
+                width: '100%',
+                zIndex: 1,
+                bgcolor: 'rgba(256, 256, 256, 0.5)',
+            }} 
         >
-            <Box display='flex'>
-                <Typography>
-                    Erik Nymo Bohne
+            <Box display='flex' ml='20vw'>
+                <Typography fontWeight='bold' fontSize='2.5rem'>
+                    ENB
                 </Typography>
             </Box>
 
             {/* ICONS */}
-            <Box display='flex'>
+            <Box display='flex' mr='20vw'>
                 <IconButton href='https://github.com/erikbohne'>
                     <GitHubIcon />
                 </IconButton>
