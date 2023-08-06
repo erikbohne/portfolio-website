@@ -1,41 +1,41 @@
-import { useState, useEffect } from "react"
+import { useState, useEffect, useCallback, useMemo } from "react"
 import { Grid, Box, Button, Typography } from "@mui/material"
 import ProjectCard from "../../components/ProjectCard";
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 
 export const LandingPage = () => {
-    const toRotate = ["Gründer and CEO", "Machine Learning Engineer", "Fullstack Developer", "Master Student", "Firefighter"];
+    const toRotate = useMemo(() => ["CEO of Eagle Solutions AS", "Machine Learning Engineer", "Fullstack Developer", "Cybernetics & Robotics Student", "Firefighter"], []);
     const [isDeleting, setIsDeleting] = useState(false);
     const [loopNum, setLoopNum] = useState(0);
     const [text, setText] = useState('');
     const period = 200;
     const [delta, setDelta] = useState(300 - Math.random() * 100);
 
-    const tick = () => {
-        let i = loopNum % toRotate.length;
-        let fullText = toRotate[i];
-        let updatedText = isDeleting ? fullText.substring(0, text.length - 1) : fullText.substring(0, text.length + 1);
+    const tick = useCallback(() => {
+      let i = loopNum % toRotate.length;
+      let fullText = toRotate[i];
+      let updatedText = isDeleting ? fullText.substring(0, text.length - 1) : fullText.substring(0, text.length + 1);
 
-        setText(updatedText);
+      setText(updatedText);
 
-        if (isDeleting) {
-            setDelta(delta / 2);
-        }
+      if (isDeleting) {
+          setDelta(delta / 2);
+      }
 
-        if (!isDeleting && updatedText === fullText) {
-            setIsDeleting(true);
-            setDelta(period);
-        } else if (isDeleting && updatedText === '') {
-            setIsDeleting(false);
-            setLoopNum(prevLoopNum => prevLoopNum + 1);
-            setDelta(500);
-        }
-    };
+      if (!isDeleting && updatedText === fullText) {
+          setIsDeleting(true);
+          setDelta(period);
+      } else if (isDeleting && updatedText === '') {
+          setIsDeleting(false);
+          setLoopNum(prevLoopNum => prevLoopNum + 1);
+          setDelta(500);
+      }
+  }, [text, delta, isDeleting, loopNum, toRotate]);
 
-    useEffect(() => {
-        let ticker = setInterval(tick, delta);
-        return () => { clearInterval(ticker) };
-    }, [text, delta]);
+  useEffect(() => {
+      let ticker = setInterval(tick, delta);
+      return () => { clearInterval(ticker) };
+  }, [text, delta, tick]);
 
     return (
         <Box id="home" mt={10} sx={{ maxWidth: '100vw', overflowX: 'hidden', p: 2, position: 'relative' }}>
