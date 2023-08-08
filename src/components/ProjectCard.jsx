@@ -18,6 +18,7 @@ function ProjectCard({ title, description, imageUrl, altText, ghLink, maxWidth }
         <CardMedia
           component="img"
           height="100%"
+          maxHeight="10vh"
           image={imageUrl}
           alt={altText}
         />

@@ -4,7 +4,7 @@ import ProjectCard from "../../components/ProjectCard";
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 
 export const LandingPage = () => {
-    const toRotate = useMemo(() => ["CEO of Eagle Solutions AS", "Machine Learning Engineer", "Fullstack Developer", "Cybernetics & Robotics Student", "Firefighter"], []);
+    const toRotate = useMemo(() => ["Fullstack Developer", "Cybernetics & Robotics Student", "Firefighter"], []);
     const [isDeleting, setIsDeleting] = useState(false);
     const [loopNum, setLoopNum] = useState(0);
     const [text, setText] = useState('');
@@ -61,7 +61,7 @@ export const LandingPage = () => {
              spacing={2} 
              alignItems="flex-start" 
              justifyContent='left'
-             style={{ height: '90vh', marginTop: '30px', marginLeft: '10%' }}
+             style={{ height: '70vh', marginTop: '30px', marginLeft: '10%' }}
             >
                 <Grid item xs={12} sm={10} md={8} lg={6} bgcolor='rgba(256,256,256,0.5)' p={4} borderRadius='10px'>
                     <Typography variant="subtitle1" gutterBottom>Welcome to the portfolio of Erik Nymo Bohne</Typography>
@@ -91,17 +91,17 @@ export const LandingPage = () => {
               <ProjectCard 
                 title='Doctor AI' 
                 description='Together with a group of students in Cogito NTNU, we created a computer vision model to diagnose pneumnia based on x-ray images. We built and engineered our own convolutional neural network (CNN), and also used a pre-trained CNN from PyTorch. Both models achieved 92% accuracy in evalutaion runs.'
-                imageUrl={`${process.env.PUBLIC_URL}/vanirodds.png`}
+                imageUrl={`${process.env.PUBLIC_URL}/doctorai.jpeg`}
                 altText='Image to represent Doctor AI project'
                 ghLink='https://github.com/CogitoNTNU/Doctor-AI'
                 maxWidth='30%'
               />
               <ProjectCard 
-                title='Doctor AI' 
-                description='Together with a group of students in Cogito NTNU, we created a computer vision model to diagnose pneumnia based on x-ray images. We built and engineered our own convolutional neural network (CNN), and also used a pre-trained CNN from PyTorch. Both models achieved 92% accuracy in evalutaion runs.'
-                imageUrl={`${process.env.PUBLIC_URL}/vanirodds.png`}
+                title='Eagle Odds' 
+                description='Website that provides live up to date betting tips using the powerful ai model we created. The website is built using React and Material UI, and is hosted on Netlify.'
+                imageUrl={`${process.env.PUBLIC_URL}/eagle_logo.jpg`}
                 altText='Image to represent Doctor AI project'
-                ghLink='https://github.com/CogitoNTNU/Doctor-AI'
+                ghLink='https://eagleodds.ai'
                 maxWidth='30%'
               />
             </Box>
