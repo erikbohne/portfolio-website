@@ -63,7 +63,7 @@ export const LandingPage = () => {
              justifyContent='left'
              style={{ height: '70vh', marginTop: '30px', marginLeft: '10%' }}
             >
-                <Grid item xs={12} sm={10} md={8} lg={6} bgcolor='rgba(256,256,256,0.5)' p={4} borderRadius='10px'>
+                <Grid item xs={12} sm={10} md={8} lg={6} bgcolor='#222' p={4} borderRadius='10px' color='#FF8200'>
                     <Typography variant="subtitle1" gutterBottom>Welcome to the portfolio of Erik Nymo Bohne</Typography>
                     <Typography variant="h3" fontWeight='bold' component="div">I'm Erik</Typography>
                     <Typography variant="h3" fontWeight='bold' component="div"><span className="wrap">{text}</span></Typography>

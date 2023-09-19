@@ -15,11 +15,11 @@ const NavBar = () => {
                 left: 0,
                 width: '100%',
                 zIndex: 1,
-                bgcolor: 'rgba(256, 256, 256, 0.5)',
+                bgcolor: '#222',
             }} 
         >
             <Box display='flex' ml='20vw'>
-                <Typography fontWeight='bold' fontSize='2.5rem'>
+                <Typography fontWeight='bold' fontSize='2.5rem' color='#FF8200'>
                     ENB
                 </Typography>
             </Box>
